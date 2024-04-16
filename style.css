@@ -1,0 +1,166 @@
+:root {
+	--roxescuro: #7f00b2;
+	--roxmedio: #8e22bb;
+	--roxclaro: #ab49cc;
+	--verdemedio: #77dd77;
+	--verdeclaro: #a9e9a4;
+	--roxclarissimo: #d0b3e6;
+
+}
+
+/* Ajustes gerais */
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: Georgia,  red serifs;
+	background: linear-gradient( #7f00b2, #a9e9a4,  #ab49cc);
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+}
+
+main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+
+#letras {
+	color: #31155c;
+}
+/* Cabeçalho e rodapé */
+header, footer {
+	width: 100%;
+	padding: 30px;
+	overflow: hidden;
+	text-align: center;
+	background: var(--roxclaro);
+	color: white;
+}
+footer {
+	text-align: right;
+	padding-top: 100px;
+}
+
+
+/* Colunas laterais */
+.coluna {
+	width: 40%;
+	padding: 40px;
+	float: left;
+}
+
+.coluna a {
+	color: white;
+}
+
+.coluna a:visited {
+	color: black;
+}
+
+
+#foto {
+	width: 100%;	
+}
+
+/* Barra de navegação */
+#navbar {
+	width: 100%;
+	overflow: hidden;
+	background: var(--roxescuro);
+}
+#navbar ul {
+	list-style-type: none; /* Tira as bolinhas */
+	margin: 0;
+	padding: 0;
+}
+#navbar ul li {
+	float: left; /* Pra ficar um do lado do outro */
+}
+#navbar ul li a {
+	text-decoration: none; /*Tira formatação de link*/
+	padding: 15px 15px;
+	display: block;
+	color: white;
+}
+#navbar ul li a:hover {
+	color: var(--roxmedio);
+	background: var(--verdeclaro);
+
+}
+
+/* Colunas laterais */
+.coluna {
+	width: 20%;
+	padding: 20px;
+	float: left;
+}
+
+.coluna a{
+	color: #00e025;
+}
+
+.coluna a:visited {
+	color: var(--roxescuro);
+}
+aside img {
+	width: 100%;
+}
+
+/* Coluna central */
+article {
+	width: 60%;
+	padding: 20px;
+	float: left;
+	background: var(--roxclarissimo);
+
+	flex-grow: 1;
+
+}
+article p {
+	text-align: justify;
+}
+
+article img {
+	width: 70%;
+	display: block;
+	margin: auto;
+}
+article p strong:first-of-type {
+	font-size: 2em;
+}
+
+
+/*Responsivo*/
+
+/*Telas médias*/
+@media screen and (max-width: 800px) {
+	.coluna {
+		width: 30%;
+	}
+	article{
+		width: 70%;
+	}
+	aside.coluna {
+		width: 100%;
+	}
+}
+
+/*Telas pequenas*/
+@media screen and (max-width: 600px) {
+	.coluna {
+		width: 100%;
+	}
+	article{
+		width: 100%;
+	}
+	aside {
+		width: 100%;
+	}

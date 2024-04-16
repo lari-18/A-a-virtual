@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PI - Botão fujão</title>
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+	<link rel="icon" href="icone-acai.png">
+
+	<style type="text/css">
+		:root {
+			--roxescuro: #7f00b2;
+			--roxmedio: #8e22bb;
+			--roxclaro: #ab49cc;
+			--verdemedio: #77dd77;
+			--verdeclaro: #a9e9a4;
+			--roxclarissimo: #d0b3e6;
+		}
+		article div {
+			max-width: 400px;
+			margin: auto;
+			text-align: center;	
+			color: var(--roxescuro);
+		}
+
+
+		article div p {
+			text-align: center;
+		} 
+		#botao_nao, #botao_sim {
+			background-color: var(--roxescuro);
+			border: none;
+			border-radius: 5px;
+			font-size: 2.5em	;
+			margin: 10px;
+		}
+
+		#botao_nao:hover, #botao_sim:hover {
+			background-color: var(--medio);
+		}
+
+		@media (hover: none) {
+			#botao_nao:hover {
+				background-color: var(--roxescuro);
+			}
+		}
+
+		@media screen and (max_width: 600px) {
+			.coluna {
+				display: none;
+			}
+		}
+	</style>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js" integrity="sha512-aNMyYYxdIxIaot0Y1/PLuEu3eipGCmsEUBrUq+7aVyPGMFH8z0eTP0tkqAvv34fzN6z+201d3T8HPb1svWSKHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script type="text/javascript">
+		function runaway() {
+			let distanciaX = Math.round( Math.random()*130)+130;
+			let sinalX = Math.round( Math.random()*2-1);
+			let distanciaY = Math.round( Math.random()*110)+110;
+			let sinalY = Math.round( Math.random()*2-1);
+
+
+			anime({
+				targets: '#botao_nao',
+				translateX: '+=' + (distanciaX*sinalX),
+				translateY: '+=' + (distanciaY*sinalY),
+				easing: 'easeOutCirc'
+			})
+		}
+	</script>
+</head>
+<body>
+<!-- Cabeçalho -->
+<header>
+	<h1>AÇAÍ</h1>
+	
+</header>
+
+<!-- Barra de navegação -->
+<nav id="navbar">
+	<ul>
+		<li><a href="index.html">Página inicial</a></li>
+		<li><a href="curiosidade.html">Curiosidades do açaí</a></li>
+		<li><a href="montando_acai.html">Monte seu açaí virtual</a></li>
+		<li><a href="avaliacao.html">Dê seu feedback do site!</a></li>
+	</ul>
+</nav>
+
+<!-- Conteúdo principal --> 
+<main>
+	<!-- Coluna à esquerda -->
+	<nav class="coluna">
+		<p>  </p>
+	</nav>
+	<!-- Coluna central -->
+	<article>
+		<div>
+			<p>Manifeste sua opinião sobre o site</p>
+			<p>Gostou do site?</p>
+
+			<!-- <button>&#128077;</button> -->
+			<form action="https://89907414-1f18-4d45-9d3a-4b2a5c9ac587-00-nle758encixk.riker.replit.dev/larissa/index.php" method="post">
+				<input id="botao_sim" type="submit" name="sub" value="&#128077;">
+				<button id="botao_nao"
+					onmouseover="runaway()"
+					onclick="runaway()"
+					ontouchstart="runaway()" 
+				>&#128078;</button>
+			</form>
+
+
+
+		</div>
+
+
+	</article>
+
+
+
+
+	<!-- Coluna à direita -->
+	<aside class="coluna">
+	
+	</aside>
+
+</main>
+
+<!-- Rodapé -->
+<footer>
+	<img src="acaii.gif" style="margin: auto; display: block;">
+	<p>2024</p>
+	<p>Desenvolvido por: Larissa</p>
+	<p>Para o curso Jovem Programadora - Senac Vila Velha</p>
+</footer>
+</body>
+</html>
